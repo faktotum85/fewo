@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'house.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>{{ 'house.title'|trans }}</h1>
+        <p>{{ 'house.description'|trans|raw }}</p>
+        <h2>{{ 'object.features'|trans }}</h2>
+        <ul>
+            <li>{{ 'house.feature.bedrooms'|trans }}</li>
+            <li>{{ 'house.feature.kitchen'|trans }}</li>
+            <li>{{ 'house.feature.livingroom'|trans }}</li>
+            <li>{{ 'house.feature.balcony'|trans }}</li>
+            <li>{{ 'object.feature.padio'|trans }}</li>
+            <li>{{ 'object.feature.lawn'|trans }}</li>
+            <li>{{ 'object.feature.parking'|trans }}</li>
+            <li>{{ 'house.feature.separateEntrance'|trans }}</li>
+        </ul>
+        <h2>{{ 'object.pricing'|trans }}</h2>
+        <ul>
+            <li>{{ 'house.pricing.threeNights'|trans }}</li>
+            <li>{{ 'house.pricing.additionalNights'|trans }}</li>
+            <li>{{ 'house.pricing.children'|trans }}</li>
+            <li>{{ 'house.pricing.sheetsIncluded'|trans }}</li>
+            <li>{{ 'house.pricing.twoNights'|trans }}</li>
+        </ul>
+    </main>
+{% endblock %}

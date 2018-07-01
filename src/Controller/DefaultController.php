@@ -8,12 +8,34 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/default", name="default")
+     * @Route("/preise", name="prices")
      */
-    public function index()
+    public function prices()
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return $this->render('default/prices.html.twig');
+    }
+
+    /**
+     * @Route("/anfahrt", name="directions")
+     */
+    public function directions()
+    {
+        return $this->render('default/directions.html.twig');
+    }
+
+    /**
+     * @Route("/ferienwohnung", name="appartment")
+     */
+    public function appartment()
+    {
+        return $this->render('default/appartment.html.twig');
+    }
+
+    /**
+     * @Route("/ferienhaus", name="house")
+     */
+    public function house()
+    {
+        return $this->render('default/house.html.twig');
     }
 }

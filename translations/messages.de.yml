@@ -1,0 +1,47 @@
+base:
+  title: Ferienwohnung und Ferienhaus in Hetzdorf
+prices:
+  title: Preise
+directions:
+  title: Anfahrt
+object:
+  features: Wir bieten
+  pricing: Preise
+  feature:
+    padio: Terasse
+    lawn: Liegewiese
+    parking: PKW Stellplatz
+appartment:
+  title: Ferienwohnung
+  description: Wir bieten Ihnen eine gemütlich eingerichtete Ferienwohnung für <strong>zwei bis drei Personen (57m²)</strong> mit separatem Eingang.
+  feature:
+    livingroom: Wohn- und Schlafzimmer
+    bedroom: Schlafzimmer
+    crib: Kinderbett
+    bathroom: DU/WC
+    tv: TV
+    bbq: Grill
+    suitableForWheelchairs: Rollstuhlgeeignet
+  pricing:
+    threeNights: "ab 3 Übernachtungen: 2 Personen ab 35 Euro, 1 Person ab 25 Euro"
+    additionalNights: jede weitere Person 10 Euro
+    children: Kinder bis 12 Jahre 5 Euro
+    twoNights: Preis für 2 Übernachtungen nach Vereinbarung
+house:
+  title: Ferienhaus
+  description: Unser Ferienhaus liegt im Grünen und bietet mit <strong>62m² bis 90m² Platz für zwei bis fünf Personen</strong>.
+  feature:
+    bedrooms: zwei Schlafzimmer (3 bzw. 2 Betten mit je DU/WC)
+    kitchen: Küche
+    livingroom: Wohnzimmer mit Radio und TV
+    bbq: Grillmöglichkeit
+    balcony: Balkon
+    separateEntrance: separater Eingang
+  pricing:
+    threeNights: "ab 3 Übernachtungen: 2 Personen ab 40 Euro"
+    additionalNights: jede weitere Person 15 Euro
+    children: Kinder bis 12 Jahre 5 Euro
+    sheetsIncluded: inkl. Bettwäsche, Handtücher, Nebenkosten
+    twoNights: Preis für 2 Übernachtungen nach Vereinbarung
+contact:
+  title: Kontakt

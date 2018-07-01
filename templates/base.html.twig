@@ -2,10 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ 'base.title'|trans }}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
+        <nav>
+            <ul>
+                <li><a href="{{ url('prices') }}">{{ 'prices.title'|trans }}</a></li>
+                <li><a href="{{ url('directions') }}">{{ 'directions.title'|trans }}</a></li>
+                <li><a href="{{ url('house') }}">{{ 'house.title'|trans }}</a></li>
+                <li><a href="{{ url('appartment') }}">{{ 'appartment.title'|trans }}</a></li>
+                <li><a href="{{ url('contact') }}">{{ 'contact.title'|trans }}</a></li>
+            </ul>
+        </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
