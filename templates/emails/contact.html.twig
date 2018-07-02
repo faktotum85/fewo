@@ -1,0 +1,14 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block body %}
+    <h3>Neues Kontakformular</h3>
+
+    <p>Ein Besucher hat das Kontaktformular ausgefüllt.</p>
+
+    <p>
+        <strong>Email-Adresse</strong>: {{ formData.email }}
+    </p>
+    <p>
+        <strong>Nachricht</strong>: {{ formData.message }}
+    </p>
+{% endblock %}

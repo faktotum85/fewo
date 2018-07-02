@@ -15,6 +15,15 @@
                 <li><a href="{{ url('contact') }}">{{ 'contact.title'|trans }}</a></li>
             </ul>
         </nav>
+        {% block flashes %}
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="flash-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endblock %}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
