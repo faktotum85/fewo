@@ -1,0 +1,29 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block body %}
+    <h3>Neue Buchungsanfrage</h3>
+
+    <p>Ein Besucher hat eine Buchungsanfrage gestellt.</p>
+
+    <p>
+        <strong>Name</strong>: {{ formData.firstName }} {{ formData.lastName }}
+    </p>
+    <p>
+        <strong>Adresse</strong>:
+        {{ formData.street }} {{ formData.streetNumber }},
+        {{ formData.zipcode }} {{ formData.city }}
+    </p>
+    <p>
+        <strong>Angefragter Zeitraum:</strong>
+        {{ formData.arrivalDate|date('d-m-Y') }} - {{ formData.departureDate|date('d-m-Y') }}
+    </p>
+    <p>
+        <strong>Email: </strong> {{ formData.email }}
+    </p>
+    <p>
+        <strong>Telefonnummer: </strong> {{ formData.phone }}
+    </p>
+    <p>
+    <strong>Anmerkungen: </strong> {{ formData.comments }}
+    </p>
+{% endblock %}

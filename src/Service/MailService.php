@@ -25,11 +25,27 @@ class MailService
      */
     public function sendContactMail(FormInterface $form)
     {
-        $message = (new Swift_Message('Test Email'))
+        $message = (new Swift_Message('Kontaktanfrage'))
             ->setFrom('mail@sweller.de')
             ->setTo('mail@sweller.de')
             ->setReplyTo($form->getData()->email)
             ->setBody($this->twig->render('emails/contact.html.twig', [
+                'formData' => $form->getData()
+            ]), 'text/html');
+        $this->mailer->send($message);
+    }
+
+    /**
+     * @param FormInterface $form
+     * @throws Exception
+     */
+    public function sendBookingMail(FormInterface $form)
+    {
+        $message = (new Swift_Message('Buchungsanfrage'))
+            ->setFrom('mail@sweller.de')
+            ->setTo('mail@sweller.de')
+            ->setReplyTo($form->getData()->email)
+            ->setBody($this->twig->render('emails/booking.html.twig', [
                 'formData' => $form->getData()
             ]), 'text/html');
         $this->mailer->send($message);

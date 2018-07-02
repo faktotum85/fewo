@@ -45,6 +45,8 @@ house:
     twoNights: Preis für 2 Übernachtungen nach Vereinbarung
 contact:
   title: Kontakt
+booking:
+  title: Buchen
 privacy:
   title: Datenschutz
 imprint:

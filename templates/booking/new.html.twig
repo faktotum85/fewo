@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ 'contact.title'|trans }} - {{ parent() }}
+    {{ 'booking.title'|trans }} - {{ parent() }}
 {% endblock %}
 
 {% block body %}
     <main>
-        <h1>{{ 'contact.title'|trans }}</h1>
+        <h1>{{ 'booking.title'|trans }}</h1>
         {{ form_start(form) }}
         {{ form_widget(form) }}
-        <button type="submit">Kontaktformular abschicken</button>
+        <button type="submit">Buchungsanfrage stellen</button>
         {{ form_end(form) }}
     </main>
 {% endblock %}
