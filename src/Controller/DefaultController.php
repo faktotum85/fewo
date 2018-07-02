@@ -38,4 +38,20 @@ class DefaultController extends Controller
     {
         return $this->render('default/house.html.twig');
     }
+
+    /**
+     * @Route("/impressum", name="imprint")
+     */
+    public function imprint()
+    {
+        return $this->render('default/imprint.html.twig');
+    }
+
+    /**
+     * @Route("/datenschutz", name="privacy")
+     */
+    public function privacy()
+    {
+        return $this->render('default/privacy.html.twig');
+    }
 }

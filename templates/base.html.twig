@@ -6,15 +6,17 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        <nav>
-            <ul>
-                <li><a href="{{ url('prices') }}">{{ 'prices.title'|trans }}</a></li>
-                <li><a href="{{ url('directions') }}">{{ 'directions.title'|trans }}</a></li>
-                <li><a href="{{ url('house') }}">{{ 'house.title'|trans }}</a></li>
-                <li><a href="{{ url('appartment') }}">{{ 'appartment.title'|trans }}</a></li>
-                <li><a href="{{ url('contact') }}">{{ 'contact.title'|trans }}</a></li>
-            </ul>
-        </nav>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="{{ url('prices') }}">{{ 'prices.title'|trans }}</a></li>
+                    <li><a href="{{ url('directions') }}">{{ 'directions.title'|trans }}</a></li>
+                    <li><a href="{{ url('house') }}">{{ 'house.title'|trans }}</a></li>
+                    <li><a href="{{ url('appartment') }}">{{ 'appartment.title'|trans }}</a></li>
+                    <li><a href="{{ url('contact') }}">{{ 'contact.title'|trans }}</a></li>
+                </ul>
+            </nav>
+        </header>
         {% block flashes %}
             {% for label, messages in app.flashes %}
                 {% for message in messages %}
@@ -25,6 +27,12 @@
             {% endfor %}
         {% endblock %}
         {% block body %}{% endblock %}
+        <footer>
+            <ul>
+                <li><a href="{{ url('imprint') }}">{{ 'imprint.title'|trans }}</a></li>
+                <li><a href="{{ url('privacy') }}">{{ 'privacy.title'|trans }}</a></li>
+            </ul>
+        </footer>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
