@@ -31,6 +31,7 @@ services:
           - .:/home/wwwroot/sf4
         environment:
           - maildev_host=sf4_maildev
+          - DATABASE_URL=mysql://sf4:sf4@mysql:3306/sf4
         depends_on:
           - maildev
           - mysql
