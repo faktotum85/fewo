@@ -1,12 +1,16 @@
 <?php
 
-
 namespace App\Data;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Booking
 {
+    /**
+     * @Assert\Choice(callback={"App\Enum\AccommodationTypeEnum", "getAvailableTypes"})
+     * @Assert\NotBlank()
+     */
+    public $accommodation;
     /**
      * @Assert\Type("string")
      * @Assert\NotBlank()

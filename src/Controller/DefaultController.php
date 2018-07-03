@@ -24,11 +24,11 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/ferienwohnung", name="appartment")
+     * @Route("/ferienwohnung", name="apartment")
      */
-    public function appartment()
+    public function apartment()
     {
-        return $this->render('default/appartment.html.twig');
+        return $this->render('default/apartment.html.twig');
     }
 
     /**

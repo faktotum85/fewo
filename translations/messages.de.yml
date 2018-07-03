@@ -11,7 +11,7 @@ object:
     padio: Terasse
     lawn: Liegewiese
     parking: PKW Stellplatz
-appartment:
+apartment:
   title: Ferienwohnung
   description: Wir bieten Ihnen eine gemütlich eingerichtete Ferienwohnung für <strong>zwei bis drei Personen (57m²)</strong> mit separatem Eingang.
   feature:
@@ -53,6 +53,7 @@ booking:
   title: Buchen
   submit: Buchungsanfrage stellen
   field:
+    accommodation: "Unterkunft:"
     firstName: "Vorname:"
     lastName: "Nachname:"
     street: "Straße:"

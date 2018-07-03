@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'apartment.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>{{ 'apartment.title'|trans }}</h1>
+        <p>{{ 'apartment.description'|trans|raw }}</p>
+        <h2>{{ 'object.features'|trans }}</h2>
+        <ul>
+            <li>{{ 'apartment.feature.livingroom'|trans }}</li>
+            <li>{{ 'apartment.feature.bedroom'|trans }}</li>
+            <li>{{ 'apartment.feature.crib'|trans }}</li>
+            <li>{{ 'apartment.feature.bathroom'|trans }}</li>
+            <li>{{ 'apartment.feature.tv'|trans }}</li>
+            <li>{{ 'object.feature.padio'|trans }}</li>
+            <li>{{ 'object.feature.lawn'|trans }}</li>
+            <li>{{ 'object.feature.parking'|trans }}</li>
+            <li>{{ 'apartment.feature.bbq'|trans }}</li>
+            <li>{{ 'apartment.feature.suitableForWheelchairs'|trans }}</li>
+        </ul>
+        <h2>{{ 'object.pricing'|trans }}</h2>
+        <ul>
+            <li>{{ 'apartment.pricing.threeNights'|trans }}</li>
+            <li>{{ 'apartment.pricing.additionalNights'|trans }}</li>
+            <li>{{ 'apartment.pricing.children'|trans }}</li>
+            <li>{{ 'apartment.pricing.twoNights'|trans }}</li>
+        </ul>
+    </main>
+{% endblock %}

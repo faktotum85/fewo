@@ -8,6 +8,7 @@
     <main>
         <h1>{{ 'booking.title'|trans }}</h1>
         {{ form_start(form) }}
+        {{ form_row(form.accommodation) }}
         {{ form_row(form.firstName) }}
         {{ form_row(form.lastName) }}
         {{ form_row(form.street) }}
