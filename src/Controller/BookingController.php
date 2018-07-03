@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Data\Booking;
 use App\Form\BookingType;
+use App\Service\BookingService;
 use App\Service\MailService;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -15,10 +16,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class BookingController extends Controller
 {
     private $mailService;
+    private $bookingService;
 
-    public function __construct(MailService $mailService)
+    public function __construct(
+        MailService $mailService,
+        BookingService $bookingService
+    )
     {
         $this->mailService = $mailService;
+        $this->bookingService = $bookingService;
     }
 
     /**
@@ -36,6 +42,7 @@ class BookingController extends Controller
 
         if($form->isSubmitted() && $form->isValid()) {
             $this->mailService->sendBookingMail($form);
+            $this->bookingService->storeBookingData($form->getData());
             $this->addFlash('success', 'Ihre Buchungsanfrage wurde erfolgreich versandt.');
             return $this->redirectToRoute('booking');
         }

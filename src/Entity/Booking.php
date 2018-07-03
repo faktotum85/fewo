@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +32,16 @@ class Booking
      * @ORM\Column(type="text", nullable=true)
      */
     private $comments;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $arrivalDate;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $departureDate;
 
     public function getId()
     {
@@ -69,6 +80,30 @@ class Booking
     public function setComments(?string $comments): self
     {
         $this->comments = $comments;
+
+        return $this;
+    }
+
+    public function getArrivalDate(): ?DateTimeInterface
+    {
+        return $this->arrivalDate;
+    }
+
+    public function setArrivalDate(DateTimeInterface $arrivalDate): self
+    {
+        $this->arrivalDate = $arrivalDate;
+
+        return $this;
+    }
+
+    public function getDepartureDate(): ?DateTimeInterface
+    {
+        return $this->departureDate;
+    }
+
+    public function setDepartureDate(DateTimeInterface $departureDate): self
+    {
+        $this->departureDate = $departureDate;
 
         return $this;
     }
