@@ -59,7 +59,8 @@ class BookingType extends AbstractType
                 'label' => 'booking.field.phone'
             ])
             ->add('comments', TextareaType::class, [
-                'label' => 'booking.field.comments'
+                'label' => 'booking.field.comments',
+                'required' => false,
             ])
             ->add('agreedToTerms', CheckboxType::class, [
                 'label' => false
