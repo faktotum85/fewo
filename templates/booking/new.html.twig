@@ -8,8 +8,27 @@
     <main>
         <h1>{{ 'booking.title'|trans }}</h1>
         {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit">Buchungsanfrage stellen</button>
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.street) }}
+        {{ form_row(form.streetNumber) }}
+        {{ form_row(form.zipcode) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.arrivalDate) }}
+        {{ form_row(form.departureDate) }}
+        {{ form_row(form.phone) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.comments) }}
+        <div>
+            {{ form_errors(form.agreedToTerms) }}
+            {{ form_widget(form.agreedToTerms) }}
+            <label for="booking_agreedToTerms" class="required">
+                {{ 'form.field.agreedToTermsPreLink'|trans }}
+                <a href="{{ url('privacy') }}">{{ 'form.field.agreedToTermsLink'|trans }}</a>
+                {{ 'form.field.agreedToTermsPostLink'|trans }}
+            </label>
+        </div>
+        <button type="submit">{{ 'booking.submit'|trans }}</button>
         {{ form_end(form) }}
     </main>
 {% endblock %}

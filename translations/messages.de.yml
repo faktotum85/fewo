@@ -45,8 +45,30 @@ house:
     twoNights: Preis für 2 Übernachtungen nach Vereinbarung
 contact:
   title: Kontakt
+  submit: Kontaktformular abschicken
+  field:
+    email: "Ihre eMail-Adresse:"
+    message: "Ihre Nachricht:"
 booking:
   title: Buchen
+  submit: Buchungsanfrage stellen
+  field:
+    firstName: "Vorname:"
+    lastName: "Nachname:"
+    street: "Straße:"
+    streetNumber: "Hausnummer:"
+    zipcode: "Postleitzahl:"
+    city: "Stadt:"
+    arrivalDate: "Anreisetag:"
+    departureDate: "Abreisetag:"
+    phone: "Telefon:"
+    email: "eMail:"
+    comments: "Anmerkungen:"
+form:
+  field:
+    agreedToTermsPreLink: Ich akzeptiere die
+    agreedToTermsLink: Datenschutzbestimmungen
+    agreedToTermsPostLink: und bin einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage gespeichert werden.
 privacy:
   title: Datenschutz
 imprint:

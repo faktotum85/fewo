@@ -8,8 +8,18 @@
     <main>
         <h1>{{ 'contact.title'|trans }}</h1>
         {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button type="submit">Kontaktformular abschicken</button>
+        {{ form_row(form.email) }}
+        {{ form_row(form.message) }}
+        <div>
+            {{ form_errors(form.agreedToTerms) }}
+            {{ form_widget(form.agreedToTerms) }}
+            <label for="contact_agreedToTerms" class="required">
+                {{ 'form.field.agreedToTermsPreLink'|trans }}
+                <a href="{{ url('privacy') }}">{{ 'form.field.agreedToTermsLink'|trans }}</a>
+                {{ 'form.field.agreedToTermsPostLink'|trans }}
+            </label>
+        </div>
+        <button type="submit">{{ 'contact.submit'|trans }}</button>
         {{ form_end(form) }}
     </main>
 {% endblock %}
