@@ -1,0 +1,3 @@
+booking:
+  wrongDateOrder: Das Abreisedatum darf nicht vor dem Anreisedatum liegen.
+  inPast: Das Anreisedatum muss in der Zukunft liegen.

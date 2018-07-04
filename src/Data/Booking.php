@@ -2,7 +2,9 @@
 
 namespace App\Data;
 
+use DateTime;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
 class Booking
 {
@@ -70,4 +72,30 @@ class Booking
      * @Assert\IsTrue()
      */
     public $agreedToTerms;
+
+    /**
+     * @Assert\Callback
+     * @param ExecutionContextInterface $context
+     */
+    public function validateDateOrder(ExecutionContextInterface $context)
+    {
+        if($this->departureDate < $this->arrivalDate) {
+            $context->buildViolation('booking.wrongDateOrder')
+                ->atPath('departureDate')
+                ->addViolation();
+        }
+    }
+
+    /**
+     * @Assert\Callback
+     * @param ExecutionContextInterface $context
+     */
+    public function validateDatesInFuture(ExecutionContextInterface $context)
+    {
+        if($this->arrivalDate < new DateTime()) {
+            $context->buildViolation('booking.inPast')
+                ->atPath('arrivalDate')
+                ->addViolation();
+        }
+    }
 }

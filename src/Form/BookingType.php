@@ -47,10 +47,12 @@ class BookingType extends AbstractType
                 'label' => 'booking.field.city'
             ])
             ->add('arrivalDate', DateType::class, [
-                'label' => 'booking.field.arrivalDate'
+                'label' => 'booking.field.arrivalDate',
+                'widget' => 'single_text',
             ])
             ->add('departureDate', DateType::class, [
-                'label' => 'booking.field.departureDate'
+                'label' => 'booking.field.departureDate',
+                'widget' => 'single_text',
             ])
             ->add('email', EmailType::class, [
                 'label' => 'booking.field.email'
