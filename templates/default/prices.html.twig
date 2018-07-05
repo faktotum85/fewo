@@ -7,5 +7,20 @@
 {% block body %}
     <main>
         <h1>{{ 'prices.title'|trans }}</h1>
+        <h2>{{ 'apartment.pricing.title'|trans }} <a href="{{ url('apartment') }}">{{ 'apartment.title'|trans }}</a>:</h2>
+        <ul>
+            <li>{{ 'apartment.pricing.threeNights'|trans }}</li>
+            <li>{{ 'apartment.pricing.additionalNights'|trans }}</li>
+            <li>{{ 'apartment.pricing.children'|trans }}</li>
+            <li>{{ 'apartment.pricing.twoNights'|trans }}</li>
+        </ul>
+        <h2>{{ 'house.pricing.title'|trans }} <a href="{{ url('house') }}">{{ 'house.title'|trans }}</a>:</h2>
+        <ul>
+            <li>{{ 'house.pricing.threeNights'|trans }}</li>
+            <li>{{ 'house.pricing.additionalNights'|trans }}</li>
+            <li>{{ 'house.pricing.children'|trans }}</li>
+            <li>{{ 'house.pricing.sheetsIncluded'|trans }}</li>
+            <li>{{ 'house.pricing.twoNights'|trans }}</li>
+        </ul>
     </main>
 {% endblock %}

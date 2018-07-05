@@ -23,6 +23,7 @@ apartment:
     bbq: Grill
     suitableForWheelchairs: Rollstuhlgeeignet
   pricing:
+    title: Preise für die
     threeNights: "ab 3 Übernachtungen: 2 Personen ab 35 Euro, 1 Person ab 25 Euro"
     additionalNights: jede weitere Person 10 Euro
     children: Kinder bis 12 Jahre 5 Euro
@@ -38,6 +39,7 @@ house:
     balcony: Balkon
     separateEntrance: separater Eingang
   pricing:
+    title: Preise für das
     threeNights: "ab 3 Übernachtungen: 2 Personen ab 40 Euro"
     additionalNights: jede weitere Person 15 Euro
     children: Kinder bis 12 Jahre 5 Euro
