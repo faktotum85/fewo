@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e233e5eb22f71f144ba84687c13967d3",
+    "content-hash": "21826c04d2613c3f53771cf693bd9663",
     "packages": [
         {
             "name": "api-platform/api-pack",
@@ -4368,16 +4368,16 @@
         },
         {
             "name": "symfony/security-bundle",
-            "version": "v4.0.7",
+            "version": "v4.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/security-bundle.git",
-                "reference": "4edcb55716cdbbb26783313f34046ada778c87c5"
+                "reference": "dfabecc1fd3e626e676edef97753a645b4de85a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/4edcb55716cdbbb26783313f34046ada778c87c5",
-                "reference": "4edcb55716cdbbb26783313f34046ada778c87c5",
+                "url": "https://api.github.com/repos/symfony/security-bundle/zipball/dfabecc1fd3e626e676edef97753a645b4de85a5",
+                "reference": "dfabecc1fd3e626e676edef97753a645b4de85a5",
                 "shasum": ""
             },
             "require": {
@@ -4444,7 +4444,7 @@
             ],
             "description": "Symfony SecurityBundle",
             "homepage": "https://symfony.com",
-            "time": "2018-03-19T22:35:49+00:00"
+            "time": "2018-04-06T07:35:43+00:00"
         },
         {
             "name": "symfony/serializer",
