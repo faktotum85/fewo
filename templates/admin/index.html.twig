@@ -1,0 +1,20 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+    {{ 'admin.index.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{
+        include('admin/booking-table.html.twig', {
+            'bookings': houseBookings,
+            'title': 'house.title',
+        })
+    }}
+    {{
+        include('admin/booking-table.html.twig', {
+            'bookings': apartmentBookings,
+            'title': 'apartment.title',
+        })
+    }}
+{% endblock %}

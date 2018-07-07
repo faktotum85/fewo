@@ -1,0 +1,37 @@
+<h2>{{ title|trans }}</h2>
+{% if bookings %}
+    <table>
+        <thead>
+            <tr>
+                <th>{{ 'booking.field.arrivalDate'|trans }}</th>
+                <th>{{ 'booking.field.departureDate'|trans }}</th>
+                <th>{{ 'booking.field.firstName'|trans }}</th>
+                <th>{{ 'booking.field.lastName'|trans }}</th>
+                <th>{{ 'booking.field.street'|trans }}</th>
+                <th>{{ 'booking.field.zipcode'|trans }}</th>
+                <th>{{ 'booking.field.city'|trans }}</th>
+                <th>{{ 'booking.field.email'|trans }}</th>
+                <th>{{ 'booking.field.phone'|trans }}</th>
+                <th>{{ 'booking.field.comments'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.arrivalDate|date('d.m.y') }}</td>
+                <td>{{ booking.departureDate|date('d.m.y') }}</td>
+                <td>{{ booking.guest.firstName }}</td>
+                <td>{{ booking.guest.lastName }}</td>
+                <td>{{ booking.guest.address.streetAddress }}</td>
+                <td>{{ booking.guest.address.zipcode }}</td>
+                <td>{{ booking.guest.address.city }}</td>
+                <td>{{ booking.guest.email }}</td>
+                <td>{{ booking.guest.phone }}</td>
+                <td>{{ booking.comments }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>{{ 'admin.noBookings'|trans }}</p>
+{% endif %}

@@ -65,6 +65,11 @@ class Address
         return $this;
     }
 
+    public function getStreetAddress(): ?string
+    {
+        return $this->street . ' ' . $this->streetNumber;
+    }
+
     public function getZipcode(): ?string
     {
         return $this->zipcode;

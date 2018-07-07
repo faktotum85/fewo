@@ -55,18 +55,18 @@ booking:
   title: Buchen
   submit: Buchungsanfrage stellen
   field:
-    accommodation: "Unterkunft:"
-    firstName: "Vorname:"
-    lastName: "Nachname:"
-    street: "Straße:"
-    streetNumber: "Hausnummer:"
-    zipcode: "Postleitzahl:"
-    city: "Stadt:"
-    arrivalDate: "Anreisetag:"
-    departureDate: "Abreisetag:"
-    phone: "Telefon:"
-    email: "eMail:"
-    comments: "Anmerkungen:"
+    accommodation: "Unterkunft"
+    firstName: "Vorname"
+    lastName: "Nachname"
+    street: "Straße"
+    streetNumber: "Hausnummer"
+    zipcode: "Postleitzahl"
+    city: "Stadt"
+    arrivalDate: "Anreisetag"
+    departureDate: "Abreisetag"
+    phone: "Telefon"
+    email: "eMail"
+    comments: "Anmerkungen"
 form:
   field:
     agreedToTermsPreLink: Ich akzeptiere die
@@ -83,3 +83,8 @@ imprint:
   locality: Halsbrücke
   country: Deutschland
   email: kontakt@ferien-hetzdorf.de
+
+admin:
+  index:
+    title: Buchungsverwaltung
+  noBookings: Aktuell keine Buchungen vorhanden
