@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{{ 'base.title'|trans }}{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('build/css/app.css') }}">
+        {% endblock %}
     </head>
     <body>
         <header>
@@ -34,6 +36,8 @@
                 <li><a href="{{ url('privacy') }}">{{ 'privacy.title'|trans }}</a></li>
             </ul>
         </footer>
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/js/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
