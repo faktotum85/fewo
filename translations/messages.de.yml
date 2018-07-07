@@ -55,18 +55,19 @@ booking:
   title: Buchen
   submit: Buchungsanfrage stellen
   field:
-    accommodation: "Unterkunft"
-    firstName: "Vorname"
-    lastName: "Nachname"
-    street: "Straße"
-    streetNumber: "Hausnummer"
-    zipcode: "Postleitzahl"
-    city: "Stadt"
-    arrivalDate: "Anreisetag"
-    departureDate: "Abreisetag"
-    phone: "Telefon"
-    email: "eMail"
-    comments: "Anmerkungen"
+    accommodation: Unterkunft
+    firstName: Vorname
+    lastName: Nachname
+    street: Straße
+    streetNumber: Hausnummer
+    zipcode: Postleitzahl
+    city: Stadt
+    arrivalDate: Anreisetag
+    departureDate: Abreisetag
+    phone: Telefon
+    email: eMail
+    comments: Anmerkungen
+    createdAt: Angelegt am
 form:
   field:
     agreedToTermsPreLink: Ich akzeptiere die
