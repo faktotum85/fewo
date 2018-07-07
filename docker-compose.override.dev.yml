@@ -40,4 +40,4 @@ services:
         image: djfarrelly/maildev
         container_name: sf4_maildev
         ports:
-          - 8001:80
+          - 1080:80
