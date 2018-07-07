@@ -9,6 +9,7 @@ use App\Entity\Booking;
 use App\Form\BookingType;
 use App\Repository\BookingRepository;
 use App\Service\BookingService;
+use App\Service\MailService;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -24,14 +25,17 @@ class AdminController extends Controller
 
     private $bookingRepository;
     private $bookingService;
+    private $mailService;
 
     public function __construct(
         BookingRepository $bookingRepository,
-        BookingService $bookingService
+        BookingService $bookingService,
+        MailService $mailService
     )
     {
         $this->bookingRepository = $bookingRepository;
         $this->bookingService = $bookingService;
+        $this->mailService = $mailService;
     }
 
     /**
@@ -106,6 +110,20 @@ class AdminController extends Controller
     {
         $this->bookingService->delete($booking);
         $this->addFlash('success', 'Die Buchung wurde erfolgreich gelöscht.');
+        return $this->redirectToRoute('admin_index');
+    }
+
+    /**
+     * @Route("/{id}/bestaetigen", name="admin_confirm_booking")
+     * @param Booking $booking
+     * @return RedirectResponse
+     * @throws Exception
+     */
+    public function confirmBooking(Booking $booking)
+    {
+        $this->bookingService->confirm($booking);
+        $this->mailService->sendBookingConfirmation($booking);
+        $this->addFlash('success', 'Die Buchung wurde bestätigt');
         return $this->redirectToRoute('admin_index');
     }
 }

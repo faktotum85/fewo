@@ -14,7 +14,7 @@
                 <th>{{ 'booking.field.phone'|trans }}</th>
                 <th>{{ 'booking.field.comments'|trans }}</th>
                 <th>{{ 'booking.field.createdAt'|trans }}</th>
-                <th colspan="2">{{ 'admin.bookingActions'|trans }}</th>
+                <th colspan="3">{{ 'admin.bookingActions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -32,13 +32,20 @@
                 <td>{{ booking.comments }}</td>
                 <td>{{ booking.createdAt|date('d.m.y') }}</td>
                 <td>
-                    <a href="{{ url('admin_delete_booking', { 'id': booking.id }) }}">
-                        {{ 'admin.delete'|trans }}
-                    </a>
+                    {% if not booking.confirmed %}
+                        <a href="{{ url('admin_confirm_booking', { 'id': booking.id }) }}">
+                            {{ 'admin.confirm'|trans }}
+                        </a>
+                    {% endif %}
                 </td>
                 <td>
                     <a href="{{ url('admin_edit_booking', { 'id': booking.id }) }}">
                         {{ 'admin.edit'|trans }}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url('admin_delete_booking', { 'id': booking.id }) }}">
+                        {{ 'admin.delete'|trans }}
                     </a>
                 </td>
             </tr>

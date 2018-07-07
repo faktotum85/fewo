@@ -70,4 +70,13 @@ class BookingService
 
         return $booking;
     }
+
+    /**
+     * @param Booking $booking
+     */
+    public function confirm(Booking $booking)
+    {
+        $booking->setConfirmed(true);
+        $this->entityManager->flush();
+    }
 }

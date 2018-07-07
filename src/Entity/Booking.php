@@ -47,6 +47,16 @@ class Booking
      */
     private $departureDate;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default": false})
+     */
+    private $confirmed;
+
+    public function __construct()
+    {
+        $this->confirmed = false;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -108,6 +118,18 @@ class Booking
     public function setDepartureDate(DateTimeInterface $departureDate): self
     {
         $this->departureDate = $departureDate;
+
+        return $this;
+    }
+
+    public function getConfirmed(): ?bool
+    {
+        return $this->confirmed;
+    }
+
+    public function setConfirmed(bool $confirmed): self
+    {
+        $this->confirmed = $confirmed;
 
         return $this;
     }

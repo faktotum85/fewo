@@ -1,0 +1,25 @@
+{% extends 'emails/base.html.twig' %}
+
+{% block body %}
+    <h3>Ihre Buchungsanfrage</h3>
+
+    <p>
+        Vielen Dank für Ihre Buchungsanfrage für
+        {% if booking.accommodation == 'house' %}
+            unser Ferienhauses
+        {% else %}
+            unsere Ferienwohnung
+        {% endif %}
+        für den Zeitraum {{ booking.arrivalDate|date('d-m-Y') }} - {{ booking.departureDate|date('d-m-Y') }}.
+    </p>
+
+    <p>
+        Nachdem wir überprüft haben, dass eine Vermietung möglich ist, erhalten Sie eine endgültige
+        Bestätigung Ihrer Buchung.
+    </p>
+
+    <p>
+        Mit freundlichen Grüßen,<br/>
+        Bernd Böhme
+    </p>
+{% endblock %}

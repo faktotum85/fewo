@@ -39,7 +39,7 @@ class BookingController extends Controller
 
         if($form->isSubmitted() && $form->isValid()) {
             $bookingData = $form->getData()->booking;
-            $this->mailService->sendBookingMail($bookingData);
+            $this->mailService->sendBookingMails($bookingData);
             $this->bookingService->create($bookingData);
             $this->addFlash('success', 'Ihre Buchungsanfrage wurde erfolgreich versandt.');
             return $this->redirectToRoute('booking');
