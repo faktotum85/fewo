@@ -1,12 +1,15 @@
 <?php
 
+
 namespace App\Data;
+
 
 use DateTime;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
+use App\Entity\Booking;
 
-class Booking
+class BookingData
 {
     /**
      * @Assert\Choice(callback={"App\Enum\AccommodationTypeEnum", "getAvailableTypes"})
@@ -67,11 +70,6 @@ class Booking
      * @Assert\Type("string")
      */
     public $comments;
-    /**
-     * @Assert\Type("bool")
-     * @Assert\IsTrue()
-     */
-    public $agreedToTerms;
 
     /**
      * @Assert\Callback
@@ -97,5 +95,27 @@ class Booking
                 ->atPath('arrivalDate')
                 ->addViolation();
         }
+    }
+
+    /**
+     * @param Booking $booking
+     * @return BookingData
+     */
+    public static function fromBooking(Booking $booking)
+    {
+        $bookingData = new BookingData();
+        $bookingData->accommodation = $booking->getAccommodation();
+        $bookingData->firstName = $booking->getGuest()->getFirstName();
+        $bookingData->lastName = $booking->getGuest()->getLastName();
+        $bookingData->street = $booking->getGuest()->getAddress()->getStreet();
+        $bookingData->streetNumber = $booking->getGuest()->getAddress()->getStreetNumber();
+        $bookingData->zipcode = $booking->getGuest()->getAddress()->getZipcode();
+        $bookingData->city = $booking->getGuest()->getAddress()->getCity();
+        $bookingData->arrivalDate = $booking->getArrivalDate();
+        $bookingData->departureDate = $booking->getDepartureDate();
+        $bookingData->email = $booking->getGuest()->getEmail();
+        $bookingData->phone = $booking->getGuest()->getPhone();
+        $bookingData->comments = $booking->getComments();
+        return $bookingData;
     }
 }

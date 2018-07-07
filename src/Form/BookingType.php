@@ -4,10 +4,9 @@
 namespace App\Form;
 
 
-use App\Data\Booking;
+use App\Data\BookingData;
 use App\Enum\AccommodationTypeEnum;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -64,16 +63,13 @@ class BookingType extends AbstractType
                 'label' => 'booking.field.comments',
                 'required' => false,
             ])
-            ->add('agreedToTerms', CheckboxType::class, [
-                'label' => false
-            ])
             ->getForm();
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Booking::class
+            'data_class' => BookingData::class
         ]);
     }
 }

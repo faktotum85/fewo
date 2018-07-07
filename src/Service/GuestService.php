@@ -3,8 +3,9 @@
 
 namespace App\Service;
 
+use App\Entity\Address;
 use App\Entity\Guest;
-use App\Data\Booking as BookingData;
+use App\Data\BookingData;
 
 class GuestService
 {
@@ -16,17 +17,19 @@ class GuestService
     }
 
     /**
+     * @param Guest $guest
      * @param BookingData $bookingData
      * @return Guest
      */
-    public function fromBookingData(BookingData $bookingData): Guest
+    public function applyBookingData(Guest $guest, BookingData $bookingData): Guest
     {
-        $guest = new Guest();
         $guest->setFirstName($bookingData->firstName);
         $guest->setLastName($bookingData->lastName);
         $guest->setEmail($bookingData->email);
         $guest->setPhone($bookingData->phone);
-        $guest->setAddress($this->addressService->fromBookingData($bookingData));
+
+        $address = $guest->getAddress() ? $guest->getAddress() : new Address();
+        $guest->setAddress($this->addressService->applyBookingData($address, $bookingData));
 
         return $guest;
     }

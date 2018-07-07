@@ -8,22 +8,22 @@
     <main>
         <h1>{{ 'booking.title'|trans }}</h1>
         {{ form_start(form) }}
-        {{ form_row(form.accommodation) }}
-        {{ form_row(form.firstName) }}
-        {{ form_row(form.lastName) }}
-        {{ form_row(form.street) }}
-        {{ form_row(form.streetNumber) }}
-        {{ form_row(form.zipcode) }}
-        {{ form_row(form.city) }}
-        {{ form_row(form.arrivalDate) }}
-        {{ form_row(form.departureDate) }}
-        {{ form_row(form.phone) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.comments) }}
+        {{ form_row(form.booking.accommodation) }}
+        {{ form_row(form.booking.firstName) }}
+        {{ form_row(form.booking.lastName) }}
+        {{ form_row(form.booking.street) }}
+        {{ form_row(form.booking.streetNumber) }}
+        {{ form_row(form.booking.zipcode) }}
+        {{ form_row(form.booking.city) }}
+        {{ form_row(form.booking.arrivalDate) }}
+        {{ form_row(form.booking.departureDate) }}
+        {{ form_row(form.booking.phone) }}
+        {{ form_row(form.booking.email) }}
+        {{ form_row(form.booking.comments) }}
         <div>
             {{ form_errors(form.agreedToTerms) }}
             {{ form_widget(form.agreedToTerms) }}
-            <label for="booking_agreedToTerms" class="required">
+            <label for="booking_with_checkbox_agreedToTerms" class="required">
                 {{ 'form.field.agreedToTermsPreLink'|trans }}
                 <a href="{{ url('privacy') }}">{{ 'form.field.agreedToTermsLink'|trans }}</a>
                 {{ 'form.field.agreedToTermsPostLink'|trans }}

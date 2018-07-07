@@ -2,18 +2,18 @@
 
 namespace App\Service;
 
-use App\Data\Booking as BookingData;
+use App\Data\BookingData;
 use App\Entity\Address;
 
 class AddressService
 {
     /**
+     * @param Address $address
      * @param BookingData $bookingData
      * @return Address
      */
-    public function fromBookingData(BookingData $bookingData): Address
+    public function applyBookingData(Address $address, BookingData $bookingData): Address
     {
-        $address = new Address();
         $address->setStreet($bookingData->street);
         $address->setStreetNumber($bookingData->streetNumber);
         $address->setZipcode($bookingData->zipcode);

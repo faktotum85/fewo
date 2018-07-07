@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Data\Booking;
-use App\Form\BookingType;
+use App\Form\BookingWithCheckboxType;
 use App\Service\BookingService;
 use App\Service\MailService;
 use Exception;
@@ -35,14 +34,13 @@ class BookingController extends Controller
      */
     public function new(Request $request)
     {
-        $booking = new Booking();
-
-        $form = $this->createForm(BookingType::class, $booking);
+        $form = $this->createForm(BookingWithCheckboxType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $this->mailService->sendBookingMail($form);
-            $this->bookingService->storeBookingData($form->getData());
+            $bookingData = $form->getData()->booking;
+            $this->mailService->sendBookingMail($bookingData);
+            $this->bookingService->create($bookingData);
             $this->addFlash('success', 'Ihre Buchungsanfrage wurde erfolgreich versandt.');
             return $this->redirectToRoute('booking');
         }

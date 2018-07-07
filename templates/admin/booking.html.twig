@@ -1,0 +1,26 @@
+{% extends('base.html.twig') %}
+
+{% block title %}
+    {{ title|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <main>
+        <h1>{{ title|trans }}</h1>
+        {{ form_start(form) }}
+        {{ form_row(form.accommodation) }}
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.lastName) }}
+        {{ form_row(form.street) }}
+        {{ form_row(form.streetNumber) }}
+        {{ form_row(form.zipcode) }}
+        {{ form_row(form.city) }}
+        {{ form_row(form.arrivalDate) }}
+        {{ form_row(form.departureDate) }}
+        {{ form_row(form.phone) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.comments) }}
+        <button type="submit">{{ buttonText|trans }}</button>
+        {{ form_end(form) }}
+    </main>
+{% endblock %}

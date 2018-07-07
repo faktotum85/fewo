@@ -4,18 +4,13 @@ namespace App\Data;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Contact
+class BookingWithCheckboxData
 {
     /**
-     * @Assert\NotBlank()
-     * @Assert\Email()
+     * @Assert\Valid()
      */
-    public $email;
-    /**
-     * @Assert\Type("string")
-     * @Assert\NotBlank()
-     */
-    public $message;
+    public $booking;
+
     /**
      * @Assert\Type("bool")
      * @Assert\IsTrue()

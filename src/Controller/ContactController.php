@@ -3,7 +3,6 @@
 
 namespace App\Controller;
 
-use App\Data\Contact;
 use App\Form\ContactType;
 use App\Service\MailService;
 use Exception;
@@ -30,13 +29,11 @@ class ContactController extends Controller
      */
     public function new(Request $request)
     {
-        $contact = new Contact();
-
-        $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $this->mailService->sendContactMail($form);
+            $this->mailService->sendContactMail($form->getData());
             $this->addFlash('success', 'Ihre Nachricht wurde erfolgreich versandt.');
             return $this->redirectToRoute('contact');
         }

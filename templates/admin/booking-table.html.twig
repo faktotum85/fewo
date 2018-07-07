@@ -14,6 +14,7 @@
                 <th>{{ 'booking.field.phone'|trans }}</th>
                 <th>{{ 'booking.field.comments'|trans }}</th>
                 <th>{{ 'booking.field.createdAt'|trans }}</th>
+                <th colspan="2">{{ 'admin.bookingActions'|trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,16 @@
                 <td>{{ booking.guest.phone }}</td>
                 <td>{{ booking.comments }}</td>
                 <td>{{ booking.createdAt|date('d.m.y') }}</td>
+                <td>
+                    <a href="{{ url('admin_delete_booking', { 'id': booking.id }) }}">
+                        {{ 'admin.delete'|trans }}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url('admin_edit_booking', { 'id': booking.id }) }}">
+                        {{ 'admin.edit'|trans }}
+                    </a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

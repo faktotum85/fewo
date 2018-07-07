@@ -89,3 +89,12 @@ admin:
   index:
     title: Buchungsverwaltung
   noBookings: Aktuell keine Buchungen vorhanden
+  newBooking:
+    title: Neue Buchung anlegen
+    submit: Speichern
+  editBooking:
+    title: Buchung bearbeiten
+    submit: Speichern
+  bookingActions: Optionen
+  delete: Löschen
+  edit: Bearbeiten

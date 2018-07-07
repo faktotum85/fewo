@@ -3,8 +3,9 @@
 
 namespace App\Service;
 
-use App\Data\Booking as BookingData;
+use App\Data\BookingData;
 use App\Entity\Booking;
+use App\Entity\Guest;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
 
@@ -26,25 +27,46 @@ class BookingService
      * @param BookingData $bookingData
      * @throws Exception
      */
-    public function storeBookingData(BookingData $bookingData)
+    public function create(BookingData $bookingData)
     {
-        $booking = $this->fromBookingData($bookingData);
+        $booking = $this->applyBookingData(new Booking(), $bookingData);
         $this->entityManager->persist($booking);
         $this->entityManager->flush();
     }
 
     /**
+     * @param Booking $booking
+     * @param BookingData $bookingData
+     */
+    public function update(Booking $booking, BookingData $bookingData)
+    {
+        $this->applyBookingData($booking, $bookingData);
+        $this->entityManager->flush();
+    }
+
+    /**
+     * @param Booking $booking
+     */
+    public function delete(Booking $booking)
+    {
+        $this->entityManager->remove($booking);
+        $this->entityManager->flush();
+    }
+
+    /**
+     * @param Booking $booking
      * @param BookingData $bookingData
      * @return Booking
      */
-    public function fromBookingData(BookingData $bookingData): Booking
+    public function applyBookingData(Booking $booking, BookingData $bookingData): Booking
     {
-        $booking = new Booking();
         $booking->setAccommodation($bookingData->accommodation);
         $booking->setComments($bookingData->comments);
-        $booking->setGuest($this->guestService->fromBookingData($bookingData));
         $booking->setArrivalDate($bookingData->arrivalDate);
         $booking->setDepartureDate($bookingData->departureDate);
+
+        $guest = $booking->getGuest() ? $booking->getGuest() : new Guest();
+        $booking->setGuest($this->guestService->applyBookingData($guest, $bookingData));
 
         return $booking;
     }
