@@ -9,7 +9,7 @@ echo "Current env: ${APP_ENV}"
 cd ${WORK_DIR}
 
 if [ "${APP_ENV}" == "prod" ]; then
-    $composer install --no-dev --optimize-autoloader
+    $composer install --no-dev --optimize-autoloader --classmap-authoritative
     npm install --only=production
     npm run build
 else
